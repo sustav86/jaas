@@ -6,32 +6,9 @@
          version="3.1">
     <display-name>JAAS Example</display-name>
 
-    <servlet>
-        <servlet-name>app</servlet-name>
-        <servlet-class>jaas.App</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>app</servlet-name>
-        <url-pattern>/secret</url-pattern>
-    </servlet-mapping>
-
     <login-config>
         <auth-method>BASIC</auth-method>
         <realm-name>JaasLogin</realm-name>
     </login-config>
-
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Secret Page</web-resource-name>
-            <url-pattern>/secret</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>admin</role-name>
-        </auth-constraint>
-    </security-constraint>
-
-    <security-role>
-        <role-name>admin</role-name>
-    </security-role>
 
 </web-app>
